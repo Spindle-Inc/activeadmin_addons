@@ -74,6 +74,56 @@ $(function() {
         minimumInputLength: minimumInputLength
       });
     });
+
+    $('.select2-ajax-multiple').each(function(i, el) {
+      var url = $(el).data('url');
+      var fields = $(el).data('fields');
+      var displayName = $(el).data('display_name');
+      var minimumInputLength = $(el).data('minimum_input_length');
+      var order = fields[0] + "_desc";
+
+      $(el).select2({
+        width: '80%',
+        multiple: true,
+        initSelection: function(element, callback) {
+          var id = $(element).val();
+          var text = $(element).data("selected") || "";
+          callback({
+            id: id,
+            text: text
+          });
+        },
+        ajax: {
+          url: url,
+          dataType: 'json',
+          delay: 250,
+          data: function (term) {
+            var query = {m: "or"};
+            fields.forEach(function(field) {
+              query[field + "_contains"] = term;
+            });
+
+            return {
+              order: order,
+              q: query
+            };
+          },
+          results: function (data, page) {
+            return {
+              results: jQuery.map(data, function(resource) {
+                return {
+                  id: resource.id,
+                  text: resource[displayName]
+                };
+              })
+            };
+          },
+          cache: true
+        },
+        minimumInputLength: minimumInputLength
+      });
+    });
+
   }
 
 });
