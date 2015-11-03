@@ -40,10 +40,10 @@ $(function() {
           url: url,
           dataType: 'json',
           delay: 250,
-          data: function (term) {
+          data: function (params) {
             var query = {m: "or"};
             fields.forEach(function(field) {
-              query[field + "_contains"] = term;
+              query[field + "_contains"] = params.term;
             });
 
             return {
