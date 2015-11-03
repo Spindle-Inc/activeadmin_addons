@@ -36,14 +36,6 @@ $(function() {
 
       $(el).select2({
         width: '80%',
-        initSelection: function(element, callback) {
-          var id = $(element).val();
-          var text = $(element).data("selected") || "";
-          callback({
-            id: id,
-            text: text
-          });
-        },
         ajax: {
           url: url,
           dataType: 'json',
