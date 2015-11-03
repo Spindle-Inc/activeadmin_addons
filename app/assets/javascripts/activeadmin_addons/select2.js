@@ -60,8 +60,7 @@ $(function() {
                 };
               })
             };
-          },
-          cache: true
+          }
         },
         minimumInputLength: minimumInputLength
       });
@@ -101,8 +100,7 @@ $(function() {
                 };
               })
             };
-          },
-          cache: true
+          }
         },
         minimumInputLength: minimumInputLength
       });
