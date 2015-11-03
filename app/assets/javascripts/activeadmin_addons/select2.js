@@ -51,7 +51,7 @@ $(function() {
               q: query
             };
           },
-          results: function (data, page) {
+          processResults: function (data, page) {
             return {
               results: jQuery.map(data, function(resource) {
                 return {
