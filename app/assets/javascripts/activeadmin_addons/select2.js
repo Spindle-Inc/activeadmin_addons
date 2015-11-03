@@ -71,6 +71,7 @@ $(function() {
       var url = $(el).data('url');
       var fields = $(el).data('fields');
       var minimumInputLength = $(el).data('minimum_input_length');
+      var displayName = $(el).data('display_name');
       var order = fields[0] + "_desc";
 
       $(el).select2({
