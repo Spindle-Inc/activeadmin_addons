@@ -70,8 +70,8 @@ $(function() {
     $('.select2-ajax-tags').each(function(i, el) {
       var url = $(el).data('url');
       var fields = $(el).data('fields');
-      var minimumInputLength = $(el).data('minimum_input_length');
       var displayName = $(el).data('display_name');
+      var minimumInputLength = $(el).data('minimum_input_length');
       var order = fields[0] + "_desc";
 
       $(el).select2({
