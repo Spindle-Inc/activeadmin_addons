@@ -1,4 +1,4 @@
-class TagsMultipleInput < Formtastic::Inputs::StringInput
+class TagsMultipleInput < Formtastic::Inputs::SelectInput
   def input_html_options
     opts = {}
     opts[:class] = "select2-ajax-tags"
