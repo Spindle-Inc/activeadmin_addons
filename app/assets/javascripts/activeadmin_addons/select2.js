@@ -82,8 +82,8 @@ $(function() {
       var order = fields[0] + "_desc";
 
       $(el).select2({
+        tags: true,
         width: '80%',
-        multiple: true,
         initSelection: function(element, callback) {
           var values = $(element).val();
           var data = [];
