@@ -77,6 +77,7 @@ $(function() {
       $(el).select2({
         width: '80%',
         tags: true,
+        multiple: true,
         ajax: {
           url: url,
           dataType: 'json',
