@@ -75,10 +75,9 @@ $(function() {
       });
     });
 
-    $('.select2-ajax-multiple').each(function(i, el) {
+    $('.select2-ajax-tags').each(function(i, el) {
       var url = $(el).data('url');
       var fields = $(el).data('fields');
-      var displayName = $(el).data('display_name');
       var minimumInputLength = $(el).data('minimum_input_length');
       var order = fields[0] + "_desc";
 
@@ -86,12 +85,15 @@ $(function() {
         width: '80%',
         multiple: true,
         initSelection: function(element, callback) {
-          var id = $(element).val();
-          var text = $(element).data("selected") || "";
-          callback({
-            id: id,
-            text: text
+          var values = $(element).val();
+          var data = [];
+
+          jQuery(values.split(",")).each(function() {
+            if (this !== "")
+              data.push(this);
           });
+
+          callback(data);
         },
         ajax: {
           url: url,
@@ -123,7 +125,5 @@ $(function() {
         minimumInputLength: minimumInputLength
       });
     });
-
   }
-
 });

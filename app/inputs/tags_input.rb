@@ -3,6 +3,6 @@ class TagsInput < Formtastic::Inputs::StringInput
     opts = {}
     opts[:class] = "select2-tags"
     opts["data-collection"] = (@options[:collection] || []).to_json
-    super.merge opts
+    super.merge ops
   end
 end
