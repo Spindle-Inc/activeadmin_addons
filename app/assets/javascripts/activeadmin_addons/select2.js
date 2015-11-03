@@ -76,25 +76,14 @@ $(function() {
       $(el).select2({
         width: '80%',
         tags: true,
-        initSelection: function(element, callback) {
-          var values = $(element).val();
-          var data = [];
-
-          jQuery(values.split(",")).each(function() {
-            if (this !== "")
-              data.push(this);
-          });
-
-          callback(data);
-        },
         ajax: {
           url: url,
           dataType: 'json',
           delay: 250,
-          data: function (term) {
+          data: function (params) {
             var query = {m: "or"};
             fields.forEach(function(field) {
-              query[field + "_contains"] = term;
+              query[field + "_contains"] = params.term;
             });
 
             return {
