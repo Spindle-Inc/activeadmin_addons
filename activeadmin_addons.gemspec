@@ -5,10 +5,10 @@ require "activeadmin_addons/version"
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
-  s.name        = "activeadmin_addons"
+  s.name        = "spdl_activeadmin_addons"
   s.version     = ActiveadminAddons::VERSION
-  s.authors     = ["Platanus"]
-  s.email       = ["contact@platan.us"]
+  s.authors     = ["Platanus", "Justin Clark"]
+  s.email       = ["contact@platan.us", "jclark@spindle.com"]
   s.homepage    = "https://github.com/platanus/activeadmin_addons"
   s.summary     = "Set of addons to help with the activeadmin ui"
   s.description = "Set of addons to help with the activeadmin ui"
