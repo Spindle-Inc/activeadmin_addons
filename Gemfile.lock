@@ -19,10 +19,10 @@ GIT
 PATH
   remote: .
   specs:
-    spdl_activeadmin_addons (0.2.27)
+    activeadmin_addons (0.2.27)
       rails (>= 4)
       railties
-      select2-rails (~> 4.0.0)
+      select2-rails (>= 3.5.9)
 
 GEM
   remote: https://rubygems.org/
@@ -294,6 +294,7 @@ PLATFORMS
 
 DEPENDENCIES
   activeadmin!
+  activeadmin_addons!
   capybara
   database_cleaner
   devise
@@ -308,7 +309,6 @@ DEPENDENCIES
   sass-rails (~> 4.0.2)
   selenium-webdriver
   shoulda-matchers (= 2.6.1)
-  spdl_activeadmin_addons!
   sqlite3
 
 BUNDLED WITH
